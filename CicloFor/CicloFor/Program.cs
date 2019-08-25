@@ -7,16 +7,26 @@ namespace kokko
         static void Main(string[] args)
         {
             int z, x, y;
-            Console.WriteLine("Imprime los numeros del x hasta el y de -1");
-            Console.WriteLine("Donde arrancamos el ciclo(mayor): ");
+            Console.WriteLine("Imprime los numeros de x a y o viceversa segun cual es mayor y menor");
+            Console.WriteLine("Donde arrancamos el ciclo: ");
             x = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Donde arrancamos el ciclo(menor): ");
+            Console.WriteLine("Donde terminamos el ciclo: ");
             y = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("De cuanto en cuanto: ");
             z = Convert.ToInt32(Console.ReadLine());
-            for (int i = x; i <= y; i -= z)
+            if (x > y)
             {
-                Console.WriteLine("i = " + i);
+                for (int i = x; i > y; i -= z)
+                {
+                    Console.WriteLine("i = " + i);
+                }
+            }
+            else if(x < y)
+            {
+                for (int i = x; i < y; i += z)
+                {
+                    Console.WriteLine("i = " + i);
+                }
             }
         }
     }
